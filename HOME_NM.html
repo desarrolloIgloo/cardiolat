@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+  		<meta charset="UTF-8" />
+  		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>HOME - Miembros</title>
+      <link rel="stylesheet" type="text/css" href="css/style.css" />
+      <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,700,600,800' rel='stylesheet' type='text/css'>
+  		<noscript><link rel="stylesheet" type="text/css" href="css/noJS.css" /></noscript>
+    </head>
+    <body>
+
+<div class="container">
+    <div class="main">
+  		<div class="wrapper-demo">
+  			<div id="dd" class="wrapper-dropdown-5" tabindex="1">BIBLIOTECA CIENTÍFICA
+  				<ul class="dropdown">
+  					<li><a href="#"><i class="icon-book"></i>Journals Elsevier</a></li>
+  					<li><a href="#"><i class="icon-screenshot"></i>Im&aacute;genes Amirsys</a></li>
+            <li><a href="#"><i class="icon-facetime-video"></i>Videos Gu&iacute;a</a></li>
+            <li><a href="#"><i class="icon-play-circle"></i>Ultimas conferencias</a></li>
+  				</ul>
+  			</div>
+  		​</div>
+      <div class="rotatorI">
+        <ul>
+          <li class="show">
+            <a href="http://www.tqfarma.com">
+              <img src="images/imagen3.jpg" alt="videos_guia"/>
+            </a></li>
+          <li>
+            <a href="http://www.tqfarma.com">
+              <img src="images/imagen4.jpg" alt="info_cardio"/>
+            </a>
+          </li>
+      </ul>
+      </div>
+      <div class="mivi">
+        <div class="box">
+          <a href="#" class="mision">Misión</a>
+        </div>
+        <div class="box">
+          <a href="#" class="vision">Visión</a>
+        </div>
+        <div class="terminos">
+          Terminos y condiciones
+        </div>
+      </div>
+		</div>
+    <aside class="lateral">
+      <div class="ultimasConferencias">
+        <img src="images/ultimasConferencias.png" class="imgUltimas" alt="Pauta_ultimas_conferencias"/>
+        <div class="videoUltimas">
+          <img src="images/play.png" alt="play" />
+          <div>Simplemente el texto de relleno de las...</div>
+        </div>
+        <div class="videoUltimas">
+          <img src="images/play.png" alt="play"/>
+          <div>Simplemente el texto de relleno de las...</div>
+        </div>
+        <div class="videoUltimas">
+          <img src="images/play.png" alt="play"/>
+          <div>Simplemente el texto de relleno de las...</div>
+        </div>
+        <img src="images/verHistorial.png" class="ultimasHistorial" alt="Ver Historial"/>
+      </div>
+      <div class="rotatorX">
+        <ul>
+          <li>
+            <a href="http://www.tqfarma.com/Vadem%C3%A9cumMK/SistemaCardiovascular/RosuvastatinaMK.aspx">
+              <img src="images/rosuvastatina.jpg" width="198" height="145"  alt="rosuvastatina" />
+            </a>
+          </li>
+          <li>
+            <a href="http://www.tqfarma.com/Vadem%C3%A9cumMK/SistemaCardiovascular.aspx">
+              <img src="images/olmesartan.jpg" width="198" height="145"  alt="Olmesartan" />
+            </a>
+          </li>
+          <li>
+            <a href="http://www.tqfarma.com/Vadem%C3%A9cumMK/SistemaCardiovascular/Losart%C3%A1nMK.aspx">
+              <img src="images/Losartan.jpg" width="198" height="145"  alt="Losartan" />
+            </a>
+          </li>
+          <li>
+            <a href="http://www.tqfarma.com/Vadem%C3%A9cumMK/SistemaCardiovascular/Losart%C3%A1nHidroclorotiazidaMK.aspx">
+              <img src="images/Losartan-Hct.jpg" width="198" height="145"  alt="Losartan Hct" />
+            </a>
+          </li>
+        </ul>
+      </div>
+      <a href="#" class="btn home">Volver a TQFARMA
+        <span class="helper"></span>
+      </a>
+    </aside>
+    <div class="logos">
+      <img src="images/fundacion.png" class="logo_fundacion" alt="Fundacion Valle del Lili" />
+      <img src="images/mk-logo.jpg" class="logo_mk" alt="Logo MK" />
+    </div>
+		</div>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+		<script type="text/javascript">
+			function DropDown(el) {
+				this.dd = el;
+				this.initEvents();
+			}
+			DropDown.prototype = {
+				initEvents : function() {
+					var obj = this;
+
+					obj.dd.on('click', function(event){
+						$(this).toggleClass('active');
+						event.stopPropagation();
+					});
+				}
+			}
+			$(function() {
+				var dd = new DropDown( $('#dd') );
+        var dd1 = new DropDown( $('#dd1') );
+        var dd2 = new DropDown( $('#dd2') );
+
+				$(document).click(function() {
+					$('.wrapper-dropdown-5').removeClass('active');
+				});
+			});
+		</script>
+    <script>
+      function therotatorX() {
+        $('div.rotatorX ul li').css({opacity: 0.0});
+        $('div.rotatorX ul li:first').css({opacity: 1.0});
+        setInterval('rotateX()',6000);
+      }
+      function rotateX() {
+        var current = ($('div.rotatorX ul li.show')?  $('div.rotatorX ul li.show') : $('div.rotatorX ul li:first'));
+          if ( current.length == 0 ) current = $('div.rotatorX ul li:first');
+        var next = ((current.next().length) ? ((current.next().hasClass('show')) ? $('div.rotatorX ul li:first') :current.next()) : $('div.rotatorX ul li:first'));
+        next.css({opacity: 0.0})
+        .addClass('show')
+        .animate({opacity: 1.0}, 1000);
+        current.animate({opacity: 0.0}, 1000)
+        .removeClass('show');
+      };
+      $(document).ready(function() {
+        therotatorX();
+        $('div.rotatorX').fadeIn(1000);
+          $('div.rotatorX ul li').fadeIn(1000);
+      });
+      function therotatorI() {
+        $('div.rotatorI ul li').css({opacity: 0.0});
+        $('div.rotatorI ul li:first').css({opacity: 1.0});
+        setInterval('rotate()',6000);
+      }
+      function rotate() {
+        var current = ($('div.rotatorI ul li.show')?  $('div.rotatorI ul li.show') : $('div.rotatorI ul li:first'));
+          if ( current.length == 0 ) current = $('div.rotatorI ul li:first');
+        var next = ((current.next().length) ? ((current.next().hasClass('show')) ? $('div.rotatorI ul li:first') :current.next()) : $('div.rotatorI ul li:first'));
+        next.css({opacity: 0.0})
+        .addClass('show')
+        .animate({opacity: 1.0}, 1000);
+        current.animate({opacity: 0.0}, 1000)
+        .removeClass('show');
+      };
+      $(document).ready(function() {
+        therotatorI();
+        $('div.rotatorI').fadeIn(1000);
+        $('div.rotatorI ul li').fadeIn(1000); // tweek for IE
+      });
+    </script>
+	</body>
+</html>
